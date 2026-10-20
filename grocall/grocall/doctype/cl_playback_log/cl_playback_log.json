@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2026-10-08 11:43:36.752268",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "call",
+  "user",
+  "played_at",
+  "ip",
+  "rep"
+ ],
+ "fields": [
+  {
+   "fieldname": "call",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Call",
+   "options": "CL Call",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Listened By",
+   "options": "User"
+  },
+  {
+   "fieldname": "played_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "When"
+  },
+  {
+   "fieldname": "ip",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "rep",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Call Belongs To",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-08 11:43:36.752268",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Playback Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Admin"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,80 @@
+# Builds the GroCall Android app (mobile/) into a signed APK.
+# - every push touching mobile/ and every manual run: analyze, test, build, upload the APK as an artifact
+# - a tag like mobile-v0.1.0: also publishes a GitHub Release with the APK attached
+# Signing: secrets GROCALL_KEYSTORE_B64 (base64 of grocall-release.p12) and GROCALL_KEYSTORE_PASSWORD.
+# Without them the APK is debug-signed and must NOT be given to phones (updates would not install).
+name: android
+
+on:
+  push:
+    paths: ["mobile/**", ".github/workflows/android.yml"]
+    tags: ["mobile-v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.47.6"
+          channel: stable
+          cache: true
+
+      - name: Dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Unit tests
+        run: flutter test
+
+      - name: Signing key
+        env:
+          KEYSTORE_B64: ${{ secrets.GROCALL_KEYSTORE_B64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.GROCALL_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ]; then
+            echo "::warning::No signing secrets - building a DEBUG-signed APK. Do not install it on staff phones."
+            exit 0
+          fi
+          echo "$KEYSTORE_B64" | base64 -d > android/grocall-release.p12
+          printf 'storeFile=grocall-release.p12\nstorePassword=%s\nkeyPassword=%s\nkeyAlias=grocall\nstoreType=pkcs12\n' \
+            "$KEYSTORE_PASSWORD" "$KEYSTORE_PASSWORD" > android/key.properties
+
+      - name: Build APK
+        run: flutter build apk --release --build-number ${{ github.run_number }}
+
+      - name: Check signature
+        run: |
+          APKSIGNER=$(ls $ANDROID_HOME/build-tools/*/apksigner | tail -1)
+          $APKSIGNER verify --print-certs build/app/outputs/flutter-apk/app-release.apk | tee signer.txt
+          VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //; s/+.*//')
+          cp build/app/outputs/flutter-apk/app-release.apk "GroCall-${VERSION}-${{ github.run_number }}.apk"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: grocall-apk
+          path: |
+            mobile/GroCall-*.apk
+            mobile/signer.txt
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/mobile-v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${GITHUB_REF_NAME}" GroCall-*.apk --title "GroCall Android ${GITHUB_REF_NAME#mobile-v}" --notes-file ../docs/CHANGELOG.md

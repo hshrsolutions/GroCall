@@ -1,0 +1,111 @@
+{
+ "charts": [],
+ "content": "[\n {\n  \"data\": {\n   \"col\": 12,\n   \"text\": \"<span class=\\\"h4\\\"><b>GroCall</b></span>\"\n  },\n  \"id\": \"gc-h\",\n  \"type\": \"header\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"Open GroCall\"\n  },\n  \"id\": \"gc-s1\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Team\"\n  },\n  \"id\": \"gc-s2\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Settings\"\n  },\n  \"id\": \"gc-s3\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Call\"\n  },\n  \"id\": \"gc-cl_call\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Lead\"\n  },\n  \"id\": \"gc-cl_lead\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Device\"\n  },\n  \"id\": \"gc-cl_device\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Disposition\"\n  },\n  \"id\": \"gc-cl_disposition\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Stage\"\n  },\n  \"id\": \"gc-cl_stage\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Recorder Profile\"\n  },\n  \"id\": \"gc-cl_recorder_profile\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Excluded Number\"\n  },\n  \"id\": \"gc-cl_excluded_number\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Sync Log\"\n  },\n  \"id\": \"gc-cl_sync_log\",\n  \"type\": \"shortcut\"\n },\n {\n  \"data\": {\n   \"col\": 3,\n   \"shortcut_name\": \"CL Playback Log\"\n  },\n  \"id\": \"gc-cl_playback_log\",\n  \"type\": \"shortcut\"\n }\n]",
+ "creation": "2026-10-08 11:12:37.089934",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "call",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "GroCall",
+ "links": [],
+ "modified": "2026-10-08 11:43:37.240516",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "GroCall",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "CL Admin"
+  },
+  {
+   "role": "CL Sales Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "",
+   "label": "Open GroCall",
+   "type": "URL",
+   "url": "/calls"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Team",
+   "link_to": "CL Team",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Settings",
+   "link_to": "CL Settings",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Call",
+   "link_to": "CL Call",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Lead",
+   "link_to": "CL Lead",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Device",
+   "link_to": "CL Device",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Disposition",
+   "link_to": "CL Disposition",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Stage",
+   "link_to": "CL Stage",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Recorder Profile",
+   "link_to": "CL Recorder Profile",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Excluded Number",
+   "link_to": "CL Excluded Number",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Sync Log",
+   "link_to": "CL Sync Log",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "CL Playback Log",
+   "link_to": "CL Playback Log",
+   "type": "DocType"
+  }
+ ],
+ "title": "GroCall"
+}

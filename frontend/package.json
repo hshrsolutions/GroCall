@@ -1,0 +1,21 @@
+{
+	"name": "grocall-ui",
+	"private": true,
+	"version": "0.3.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build --base=/assets/grocall/frontend/ && yarn copy-html-entry",
+		"copy-html-entry": "cp ../grocall/public/frontend/index.html ../grocall/www/calls.html"
+	},
+	"dependencies": {
+		"@vitejs/plugin-vue": "^4.4.0",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.5",
+		"tailwindcss": "^3.4.3",
+		"vite": "^5.4.10",
+		"vue": "^3.5.12",
+		"vue-router": "^4.3.2",
+		"qrcode": "^1.5.4"
+	}
+}

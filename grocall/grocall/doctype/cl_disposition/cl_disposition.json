@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:label",
+ "creation": "2026-10-08 11:27:54.448667",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "label",
+  "sequence",
+  "enabled",
+  "connected",
+  "needs_follow_up",
+  "default_follow_up_days",
+  "moves_stage_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Outcome",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Order"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "default": "0",
+   "fieldname": "connected",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "The Customer Was Reached"
+  },
+  {
+   "default": "0",
+   "fieldname": "needs_follow_up",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Needs A Follow-up"
+  },
+  {
+   "depends_on": "needs_follow_up",
+   "fieldname": "default_follow_up_days",
+   "fieldtype": "Int",
+   "label": "Default Follow-up In (Days)"
+  },
+  {
+   "fieldname": "moves_stage_to",
+   "fieldtype": "Link",
+   "label": "Moves The Lead To Stage",
+   "options": "CL Stage"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-08 11:43:59.873300",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Disposition",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Sales Manager"
+  },
+  {
+   "read": 1,
+   "role": "CL Sales Rep"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

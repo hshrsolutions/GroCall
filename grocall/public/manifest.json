@@ -1,0 +1,3 @@
+{"name": "GroCall", "short_name": "GroCall", "start_url": "/calls", "scope": "/calls", "display": "standalone",
+ "background_color": "#ffffff", "theme_color": "#0f766e",
+ "icons": [{"src": "/assets/grocall/icon.svg", "sizes": "any", "type": "image/svg+xml"}]}

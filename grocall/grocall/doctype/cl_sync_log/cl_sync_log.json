@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2026-10-08 11:27:57.052977",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "device",
+  "user",
+  "app_version",
+  "received",
+  "created_count",
+  "duplicates",
+  "excluded",
+  "errors",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Phone",
+   "options": "CL Device"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Salesperson",
+   "options": "User"
+  },
+  {
+   "fieldname": "app_version",
+   "fieldtype": "Data",
+   "label": "App Version"
+  },
+  {
+   "fieldname": "received",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Received"
+  },
+  {
+   "fieldname": "created_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Created"
+  },
+  {
+   "fieldname": "duplicates",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Duplicates"
+  },
+  {
+   "fieldname": "excluded",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Excluded"
+  },
+  {
+   "fieldname": "errors",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Errors"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Long Text",
+   "label": "Details (JSON)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-08 11:27:57.052977",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Sync Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Admin"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Sales Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:profile_name",
+ "creation": "2026-10-08 11:27:54.759747",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "profile_name",
+  "enabled",
+  "priority",
+  "brands",
+  "folders",
+  "filename_regex",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "profile_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Profile",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "default": "10",
+   "description": "Lower is tried first.",
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority"
+  },
+  {
+   "description": "Android manufacturer names, one per line (lower case), e.g. samsung. Leave empty for the generic fallback profile.",
+   "fieldname": "brands",
+   "fieldtype": "Small Text",
+   "label": "Brands"
+  },
+  {
+   "description": "Paths under internal storage, one per line, e.g. Recordings/Call. Tried in order.",
+   "fieldname": "folders",
+   "fieldtype": "Small Text",
+   "label": "Recording Folders",
+   "reqd": 1
+  },
+  {
+   "description": "Regex to pull the phone number out of a file name; time matching is always used.",
+   "fieldname": "filename_regex",
+   "fieldtype": "Data",
+   "label": "File Name Pattern (Optional)"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-08 11:27:54.759747",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Recorder Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Sales Manager"
+  },
+  {
+   "read": 1,
+   "role": "CL Sales Rep"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

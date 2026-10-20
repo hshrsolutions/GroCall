@@ -1,0 +1,270 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-08 11:12:35.556002",
+ "description": "GroCall site settings",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "brand_name",
+  "brand_accent",
+  "cb_1",
+  "default_country_code",
+  "sb_2",
+  "sync_scope",
+  "allow_fallback_recorder",
+  "cb_3",
+  "consent_text",
+  "customer_announcement",
+  "sb_4",
+  "missed_call_sla_minutes",
+  "escalation_grace_minutes",
+  "cb_5",
+  "business_start",
+  "business_end",
+  "business_days",
+  "sb_6",
+  "retain_recordings_days",
+  "retain_transcripts_days",
+  "cb_7",
+  "retain_calls_days",
+  "storage_used",
+  "sb_8",
+  "auto_transcribe",
+  "stt_provider",
+  "stt_api_key",
+  "min_seconds_to_transcribe",
+  "cb_9",
+  "summary_provider",
+  "summary_api_key",
+  "monthly_ai_budget"
+ ],
+ "fields": [
+  {
+   "default": "GroCall",
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "App Name"
+  },
+  {
+   "default": "#0f766e",
+   "fieldname": "brand_accent",
+   "fieldtype": "Color",
+   "label": "Brand Colour"
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "+91",
+   "description": "Used to turn a 10-digit local number into +91XXXXXXXXXX.",
+   "fieldname": "default_country_code",
+   "fieldtype": "Data",
+   "label": "Default Country Code"
+  },
+  {
+   "description": "Only calls on the company SIM ever leave the phone (grocall-prd.md \u00a72.4).",
+   "fieldname": "sb_2",
+   "fieldtype": "Section Break",
+   "label": "What the phone syncs"
+  },
+  {
+   "default": "Company SIM only",
+   "fieldname": "sync_scope",
+   "fieldtype": "Select",
+   "label": "Sync Scope",
+   "options": "Company SIM only"
+  },
+  {
+   "default": "0",
+   "description": "Tier B phones: best-effort in-app recorder. Often catches the customer's voice faintly.",
+   "fieldname": "allow_fallback_recorder",
+   "fieldtype": "Check",
+   "label": "Allow Fallback Recorder On Google-Dialer Phones"
+  },
+  {
+   "fieldname": "cb_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Calls on this company SIM are logged and recorded for sales quality and follow-up. Recordings are visible to you, your sales manager and the administrator, and are deleted automatically after the retention period. Personal-SIM calls are never collected.",
+   "fieldname": "consent_text",
+   "fieldtype": "Small Text",
+   "label": "Consent Notice Shown At Pairing"
+  },
+  {
+   "default": "This call may be recorded for quality and follow-up.",
+   "fieldname": "customer_announcement",
+   "fieldtype": "Small Text",
+   "label": "Suggested Line For Customers"
+  },
+  {
+   "fieldname": "sb_4",
+   "fieldtype": "Section Break",
+   "label": "Missed calls and working hours"
+  },
+  {
+   "default": "30",
+   "fieldname": "missed_call_sla_minutes",
+   "fieldtype": "Int",
+   "label": "Return A Missed Call Within (Minutes)"
+  },
+  {
+   "default": "30",
+   "fieldname": "escalation_grace_minutes",
+   "fieldtype": "Int",
+   "label": "Escalate To Manager After A Further (Minutes)"
+  },
+  {
+   "fieldname": "cb_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "09:30:00",
+   "fieldname": "business_start",
+   "fieldtype": "Time",
+   "label": "Business Hours From"
+  },
+  {
+   "default": "19:00:00",
+   "fieldname": "business_end",
+   "fieldtype": "Time",
+   "label": "Business Hours To"
+  },
+  {
+   "default": "Mon,Tue,Wed,Thu,Fri,Sat",
+   "fieldname": "business_days",
+   "fieldtype": "Data",
+   "label": "Business Days"
+  },
+  {
+   "description": "A nightly job deletes older files and keeps the call row (marked Purged).",
+   "fieldname": "sb_6",
+   "fieldtype": "Section Break",
+   "label": "Retention"
+  },
+  {
+   "default": "180",
+   "fieldname": "retain_recordings_days",
+   "fieldtype": "Int",
+   "label": "Keep Recordings (Days)"
+  },
+  {
+   "default": "365",
+   "fieldname": "retain_transcripts_days",
+   "fieldtype": "Int",
+   "label": "Keep Transcripts (Days)"
+  },
+  {
+   "fieldname": "cb_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1095",
+   "fieldname": "retain_calls_days",
+   "fieldtype": "Int",
+   "label": "Keep Call Records (Days)"
+  },
+  {
+   "collapsible": 1,
+   "description": "Keys stay on the server (encrypted) and are never sent to the phone app.",
+   "fieldname": "sb_8",
+   "fieldtype": "Section Break",
+   "label": "AI transcription and summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_transcribe",
+   "fieldtype": "Check",
+   "label": "Transcribe New Recordings Automatically"
+  },
+  {
+   "fieldname": "stt_provider",
+   "fieldtype": "Select",
+   "label": "Speech-To-Text Provider",
+   "options": "\nSarvam AI\nOpenAI\nDeepgram"
+  },
+  {
+   "fieldname": "stt_api_key",
+   "fieldtype": "Password",
+   "label": "Speech-To-Text API Key"
+  },
+  {
+   "default": "20",
+   "fieldname": "min_seconds_to_transcribe",
+   "fieldtype": "Int",
+   "label": "Only Calls Longer Than (Seconds)"
+  },
+  {
+   "fieldname": "cb_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Anthropic Claude",
+   "fieldname": "summary_provider",
+   "fieldtype": "Select",
+   "label": "Summary Provider",
+   "options": "\nAnthropic Claude"
+  },
+  {
+   "fieldname": "summary_api_key",
+   "fieldtype": "Password",
+   "label": "Summary API Key"
+  },
+  {
+   "default": "0",
+   "description": "0 = AI off. New jobs stop when this month's spend reaches the budget.",
+   "fieldname": "monthly_ai_budget",
+   "fieldtype": "Currency",
+   "label": "Monthly AI Budget (INR)"
+  },
+  {
+   "description": "Updated by the nightly retention job.",
+   "fieldname": "storage_used",
+   "fieldtype": "Data",
+   "label": "Recordings Stored",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-08 11:43:31.717876",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CL Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "CL Sales Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

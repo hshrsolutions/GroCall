@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_description">GroCall uses this only on phones whose dialer keeps call recordings private. While a company-SIM call is in progress it records the microphone so the call can be reviewed. It reads nothing on your screen. Turn it off at any time.</string>
+</resources>

@@ -1,0 +1,331 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CALL-.YY.MM.-.#####",
+ "creation": "2026-10-08 11:27:56.356087",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "direction",
+  "phone",
+  "raw_number",
+  "lead",
+  "lead_name",
+  "cb_1",
+  "started_at",
+  "duration_sec",
+  "rep",
+  "rep_name",
+  "device",
+  "source",
+  "call_key",
+  "sb_2",
+  "disposition",
+  "connected",
+  "next_follow_up",
+  "cb_3",
+  "notes",
+  "dispositioned_on",
+  "sb_4",
+  "recording_status",
+  "recording_uploaded_on",
+  "recording_purged_on",
+  "cb_5",
+  "recording_seconds",
+  "recording_size",
+  "recording",
+  "recording_sha256",
+  "sb_6",
+  "transcript_status",
+  "sentiment",
+  "summary"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Direction",
+   "options": "Incoming\nOutgoing\nMissed\nRejected\nBlocked",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Number",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "raw_number",
+   "fieldtype": "Data",
+   "label": "Number As Dialled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Lead",
+   "options": "CL Lead",
+   "search_index": 1
+  },
+  {
+   "fetch_from": "lead.lead_name",
+   "fieldname": "lead_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Started At",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "duration_sec",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Duration (Seconds)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rep",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Salesperson",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "rep.full_name",
+   "fieldname": "rep_name",
+   "fieldtype": "Data",
+   "label": "Salesperson Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "label": "Phone",
+   "options": "CL Device",
+   "read_only": 1
+  },
+  {
+   "default": "android",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "android\nmanual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "call_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Call Key",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sb_2",
+   "fieldtype": "Section Break",
+   "label": "Outcome"
+  },
+  {
+   "fieldname": "disposition",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Outcome",
+   "options": "CL Disposition"
+  },
+  {
+   "default": "0",
+   "fieldname": "connected",
+   "fieldtype": "Check",
+   "label": "Connected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_follow_up",
+   "fieldtype": "Datetime",
+   "label": "Next Follow-up"
+  },
+  {
+   "fieldname": "cb_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "dispositioned_on",
+   "fieldtype": "Datetime",
+   "label": "Outcome Recorded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_4",
+   "fieldtype": "Section Break",
+   "label": "Recording"
+  },
+  {
+   "fieldname": "recording_status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Recording",
+   "options": "\nPending\nUploaded\nNot found\nNot available\nExcluded\nPurged",
+   "read_only": 1
+  },
+  {
+   "description": "Path under the site's private files. Never served directly: play it from the call.",
+   "fieldname": "recording",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Stored File",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recording_seconds",
+   "fieldtype": "Int",
+   "label": "Recording Length (Seconds)",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_6",
+   "fieldtype": "Section Break",
+   "label": "AI"
+  },
+  {
+   "fieldname": "transcript_status",
+   "fieldtype": "Select",
+   "label": "Transcript",
+   "options": "\nQueued\nDone\nFailed\nSkipped",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sentiment",
+   "fieldtype": "Select",
+   "label": "Sentiment",
+   "options": "\nPositive\nNeutral\nNegative",
+   "read_only": 1
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Text",
+   "label": "Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recording_uploaded_on",
+   "fieldtype": "Datetime",
+   "label": "Uploaded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recording_purged_on",
+   "fieldtype": "Datetime",
+   "label": "Deleted On (Retention)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recording_size",
+   "fieldtype": "Int",
+   "label": "Recording Size (Bytes)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recording_sha256",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Recording Checksum",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-08 11:47:41.613104",
+ "modified_by": "Administrator",
+ "module": "GroCall",
+ "name": "CL Call",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Sales Manager",
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CL Sales Rep",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "phone,lead_name,rep",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}
